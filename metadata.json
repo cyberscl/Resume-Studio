@@ -1,0 +1,6 @@
+{
+  "name": "AI Resume Builder",
+  "description": "An AI-powered resume builder with real-time editing, JD-tailoring rewriting, AI ID photo generation, premium templates, and one-click PDF export.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

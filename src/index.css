@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom Print Page settings for clean high-res export */
+@media print {
+  /* 1. Reset standard document box model and background for printing */
+  html,
+  body {
+    background-color: white !important;
+    color: black !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* 2. Hide all non-printable elements completely */
+  header,
+  footer,
+  aside,
+  .no-print,
+  .print\:hidden,
+  #editor-sidebar-section,
+  #resume-measure-container {
+    display: none !important;
+  }
+
+  /* 3. Reset the main workspace container layout */
+  main {
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    overflow: visible !important;
+  }
+
+  /* 4. Force the preview section to occupy full page and remain completely visible */
+  #preview-content-section {
+    display: block !important;
+    visibility: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    position: static !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: transparent !important;
+  }
+
+  /* 5. Reset inner visual frame wrapper container */
+  #preview-content-section > div {
+    display: block !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: 0 !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* 6. Clean the main printable container wrapper */
+  #resume-printable-area {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 0 !important;
+  }
+
+  /* 7. Force exact A4 dimensions and precise page splitting */
+  .resume-page {
+    width: 794px !important;
+    height: 1123px !important;
+    min-height: 1123px !important;
+    max-height: 1123px !important;
+    padding: 48px !important;
+    margin: 0 auto !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background: white !important;
+    page-break-inside: avoid !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+  }
+
+  /* 8. Enable color and background graphic rendering in browser print engines */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* 9. Set the page dimensions */
+  @page {
+    size: A4 portrait;
+    margin: 0 !important;
+  }
+}
+
+/* Smooth transitions */
+.transition-all-ease {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Beautiful Modern Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3); /* Slate-400 with opacity */
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.55); /* Darker slate-400 on hover */
+}
+
+/* Thin modern scrollbar styling for Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.3) transparent;
+}
+
